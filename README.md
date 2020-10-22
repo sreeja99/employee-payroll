@@ -42,3 +42,15 @@ DESCRIBE employee_payroll;
 ```
 SELECT* FROM employee_payroll;
 ```
+
+### UC4 - Ability to retrieve salary of particular person and employees who havejoined in a particular data range
+
+### viewing salary of particular person
+```
+SELECT salary FROM employee_payroll WHERE name='Bill';
+```
+### checking employees who joined at particular date range 
+```
+SELECT *FROM employee_payroll
+    -> WHERE start BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());
+```
