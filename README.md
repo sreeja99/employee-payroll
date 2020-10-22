@@ -73,7 +73,7 @@ update employee_payroll set gender='M' where name='Bill' or name='Charlie';
 ```
 SELECT *FROM employee_payroll;
 ```
-### UC6 - Ability to add gender to table
+### UC7 - Ability to Find Min,Max,Avg,Sum
 
 ### average salary of a female employee
 ```
