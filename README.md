@@ -37,7 +37,8 @@ DESCRIBE employee_payroll;
     -> ( 'Terisa',2000000.00,'2019-11-13'),
     -> ('Charlie',3000000.00,'2020-05-21');
 ```
-###see the DB created using show database query
+
+### UC4 - Ability to retrieve all the employee payroll
 ```
 SELECT* FROM employee_payroll;
 ```
