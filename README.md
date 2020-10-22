@@ -73,3 +73,29 @@ update employee_payroll set gender='M' where name='Bill' or name='Charlie';
 ```
 SELECT *FROM employee_payroll;
 ```
+### UC6 - Ability to add gender to table
+
+### average salary of a female employee
+```
+SELECT AVG(salary) FROM employee_payroll WHERE gender='F' GROUP BY gender;
+```
+### average salary accoring to genders
+```
+SELECT gender,AVG(salary) FROM employee_payroll GROUP BY gender;
+```
+### number of employees in according to genders
+```
+SELECT gender,COUNT(name) FROM employee_payroll GROUP BY gender;
+```
+### total salary according to genders
+```
+SELECT gender,SUM(salary) FROM employee_payroll GROUP BY gender;
+```
+### minimum salaries accoring to genders
+```
+SELECT gender,MIN(salary) FROM employee_payroll GROUP BY gender;
+```
+### maximum salaries accoring to genders
+```
+SELECT gender,MAX(salary) FROM employee_payroll GROUP BY gender;
+```
