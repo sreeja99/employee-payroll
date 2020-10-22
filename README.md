@@ -61,7 +61,15 @@ SELECT *FROM employee_payroll
 ```
 ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
 ```
+### setting F gender for female employees
+```
+update employee_payroll set gender='F' where name='Terisa';
+```
+### setting M gender for male employees
+```
+update employee_payroll set gender='M' where name='Bill' or name='Charlie';
+```
 ### viewing gender
 ```
-DESCRIBE employee_payroll;
+SELECT *FROM employee_payroll;
 ```
