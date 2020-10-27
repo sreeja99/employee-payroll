@@ -155,3 +155,43 @@ INSERT INTO employee_Payroll(name,department,gender,basic_pay,deductions,taxable
 ```
 SELECT *FROM employee_payroll;
 ```
+### UC11  - Implement ER diagram
+### creating table company
+```
+ CREATE TABLE company
+    -> (
+    ->   company_id  INT PRIMARY KEY,
+    ->   company_name VARCHAR(30) NOT NULL
+    -> );
+```
+### creating table employee
+```
+CREATE TABLE employee
+    -> (
+    ->   id              INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ->   company_id      INT REFERENCES company(company_id),
+    ->   phone_number    VARCHAR(20) NOT NULL,
+    ->   address         VARCHAR(50) NOT NULL DEFAULT 'TBD',
+    ->   gender          CHAR(1) NOT NULL
+    -> );
+```
+### creating table payroll
+```
+ CREATE TABLE payroll
+    -> (
+    ->    emp_id       INT REFERENCES employee(id),
+    ->    basic_pay    DOUBLE NOT NULL,
+    ->    deductions   DOUBLE NOT NULL,
+    ->    taxable_pay  DOUBLE NOT NULL,
+    ->    tax          DOUBLE NOT NULL,
+    ->    net_pay      DOUBLE NOT NULL
+    -> );
+```
+### creating table department
+```
+CREATE TABLE department
+    -> (
+    ->    emp_id INT REFERENCES employee(id),
+    ->    dept_id INT REFERENCES department(dept_id)
+    -> );
+```
