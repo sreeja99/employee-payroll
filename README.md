@@ -120,3 +120,37 @@ ALTER TABLE employee_payroll ALTER address SET default 'TBD';
 ```
 INSERT INTO employee_payroll(name,salary,start) VALUES('BILL',1000000.00,'2018-01-03');
 ```
+### UC9  -Ability to extend employee_payroll table to have Basic Pay, Deductions, Taxable Pay, Income Tax, Net Pay
+### changing salary column to basic_pay
+```
+ALTER TABLE employee_payroll RENAME COLUMN salary TO basic_pay;
+```
+### adding deductions after basic_pay
+```
+ALTER TABLE employee_payroll ADD deductions Double NOT NULL AFTER basic_pay;
+```
+### adding taxable_pay after deductions
+```
+ALTER TABLE employee_payroll ADD taxable_pay Double NOT NULL AFTER deductions;
+```
+### adding tax after taxable_pay
+```
+ALTER TABLE employee_payroll ADD tax Double NOT NULL AFTER taxable_pay;
+```
+### adding net_pay after tax
+```
+ALTER TABLE employee_payroll ADD net_pay Double NOT NULL AFTER tax;
+```
+### updating department of Terisa to sales
+```
+update employee_payroll set department='Sales' where name='Terisa';
+```
+### insert Terisa's new payroll
+```
+INSERT INTO employee_Payroll(name,department,gender,basic_pay,deductions,taxable_pay,tax,net_pay,start) VALUES
+    -> ('Terisa','Marketing','F',3000000.00,1000000.00,2000000.00,5000000.00,1500000.00,'2018-01-03');
+```
+### view payroll_data
+```
+SELECT *FROM employee_payroll;
+```
