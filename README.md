@@ -145,6 +145,7 @@ ALTER TABLE employee_payroll ADD net_pay Double NOT NULL AFTER tax;
 ```
 update employee_payroll set department='Sales' where name='Terisa';
 ```
+### UC10.1 -Ability to make Terissa as part of Sales and Marketing Department
 ### insert Terisa's new payroll
 ```
 INSERT INTO employee_Payroll(name,department,gender,basic_pay,deductions,taxable_pay,tax,net_pay,start) VALUES
