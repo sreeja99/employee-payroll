@@ -195,3 +195,60 @@ CREATE TABLE department
     ->    dept_id INT REFERENCES department(dept_id)
     -> );
 ```
+### UC12 -Ensure all retrieve queries done
+```
+INSERT INTO company VALUES
+    -> (1,'Capgemini'),
+    -> (2,'Company B'),
+    -> (3,'Company C');
+```
+### view table
+```
+select * from company;
+```
+### inserting into employee table
+```
+ ALTER TABLE employee
+    -> ADD COLUMN employee_name VARCHAR(20) NOT NULL AFTER company_id;
+ INSERT INTO employee VALUES
+    -> (101,1,'Bill','37263727','California','M'),
+    -> (102,1,'Terisa','371287','San Francisco','F'),
+    -> (103, 2, 'Charlie', '7876543212', 'New York', 'M' );
+```
+### view table
+```  
+SELECT * FROM employee;
+```
+### inserting into payroll table
+```
+ INSERT INTO payroll VALUES
+    -> (101,50000,5000,45000,5000,40000),
+    -> (102,20000,2000,18000,3000,15000),
+    -> (103,60000,6000,54000,4000,50000);
+```
+### view table
+```
+select*from payroll;
+```
+### insert into departemnt table
+```
+ INSERT INTO department VALUES
+    -> (101,203),
+    -> (102,201),
+    -> (102,202),
+    -> (103,204);
+```
+### view table 
+```
+SELECT *FROM department;
+```
+### checking numbers of males and females
+```
+SELECT gender,COUNT(id) FROM employee GROUP BY gender;
+```
+### get net pay value where id is specified
+```
+ SELECT net_pay FROM PAYROLL WHERE emp_id =(
+    ->  SELECT id FROM employee where gender = 'F'
+    ->  );
+```
