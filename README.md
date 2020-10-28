@@ -195,6 +195,14 @@ CREATE TABLE department
     ->    dept_id INT REFERENCES department(dept_id)
     -> );
 ```
+### creating employee department table
+```
+CREATE TABLE employee_department
+(
+ emp_id 	INT REFERENCES employee(id),
+ dept_id 	INT REFERENCES department(dept_id)
+);
+```
 ### UC12 -Ensure all retrieve queries done
 ```
 INSERT INTO company VALUES
@@ -230,7 +238,15 @@ SELECT * FROM employee;
 ```
 select*from payroll;
 ```
-### insert into departemnt table
+### insert into department table 
+```
+INSERT INTO department VALUES  					 
+ 	(201, 'Sales'),
+ 	(202, 'Marketing'),
+ 	(203, 'Logistics'),
+ 	(204, 'Management');
+```
+### insert into employee_departemnt table
 ```
  INSERT INTO department VALUES
     -> (101,203),
@@ -241,6 +257,8 @@ select*from payroll;
 ### view table 
 ```
 SELECT *FROM department;
+SELECT *FROM employee_department;
+
 ```
 ### checking numbers of males and females
 ```
